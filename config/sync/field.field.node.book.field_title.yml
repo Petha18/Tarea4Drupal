@@ -1,0 +1,21 @@
+uuid: a71b664a-bc31-45b3-99d6-2fe36eac5332
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title
+    - node.type.book
+  module:
+    - text
+id: node.book.field_title
+field_name: field_title
+entity_type: node
+bundle: book
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

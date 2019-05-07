@@ -1,0 +1,28 @@
+uuid: 9201a5ea-6a9e-4a58-924d-1f070a395542
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_portada
+    - media.type.image
+    - node.type.book
+id: node.book.field_portada
+field_name: field_portada
+entity_type: node
+bundle: book
+label: Portada
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

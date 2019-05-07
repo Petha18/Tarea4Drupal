@@ -1,0 +1,22 @@
+uuid: b97ec5ed-3eac-4f33-91c5-7585dfd7b2c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.book
+  module:
+    - text
+id: node.book.field_description
+field_name: field_description
+entity_type: node
+bundle: book
+label: Description
+description: 'Summary of the book'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

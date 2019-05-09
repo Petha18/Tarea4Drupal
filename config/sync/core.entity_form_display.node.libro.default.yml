@@ -29,10 +29,11 @@ content:
   field_categoria:
     weight: 5
     settings:
+      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: text_textfield
+    type: entity_reference_autocomplete
     region: content
   field_description:
     weight: 4

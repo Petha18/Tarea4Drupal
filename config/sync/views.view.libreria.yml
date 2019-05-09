@@ -6,8 +6,12 @@ dependencies:
     - core.entity_view_mode.node.lista_libros
     - node.type.libro
     - system.menu.main
+    - taxonomy.vocabulary.categoria_libro
+  content:
+    - 'taxonomy_term:categoria_libro:c4edac54-a289-4708-8ad4-d32eab5f8c39'
   module:
     - node
+    - taxonomy
     - user
 id: libreria
 label: Libreria
@@ -147,29 +151,32 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-        field_autor_value:
-          id: field_autor_value
-          table: node__field_autor
-          field: field_autor_value
+          group: 1
+        title:
+          id: title
+          table: node_field_data
+          field: title
           relationship: none
           group_type: group
           admin_label: ''
-          operator: word
+          operator: contains
           value: ''
           group: 1
-          exposed: false
+          exposed: true
           expose:
-            operator_id: ''
-            label: ''
+            operator_id: title_op
+            label: Title
             description: ''
             use_operator: false
-            operator: ''
-            identifier: ''
+            operator: title_op
+            identifier: title
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -183,30 +190,34 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+          entity_type: node
+          entity_field: title
           plugin_id: string
-        field_categoria_value:
-          id: field_categoria_value
-          table: node__field_categoria
-          field: field_categoria_value
+        field_autor_value:
+          id: field_autor_value
+          table: node__field_autor
+          field: field_autor_value
           relationship: none
           group_type: group
           admin_label: ''
           operator: word
           value: ''
           group: 1
-          exposed: false
+          exposed: true
           expose:
-            operator_id: ''
-            label: ''
+            operator_id: field_autor_value_op
+            label: 'Autor '
             description: ''
             use_operator: false
-            operator: ''
-            identifier: ''
+            operator: field_autor_value_op
+            identifier: field_autor_value
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -231,19 +242,21 @@ display:
           operator: word
           value: ''
           group: 1
-          exposed: false
+          exposed: true
           expose:
-            operator_id: ''
-            label: ''
+            operator_id: field_description_value_op
+            label: 'Description '
             description: ''
             use_operator: false
-            operator: ''
-            identifier: ''
+            operator: field_description_value_op
+            identifier: field_description_value
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -258,6 +271,52 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: string
+        field_categoria_target_id:
+          id: field_categoria_target_id
+          table: node__field_categoria
+          field: field_categoria_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            1: 1
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_categoria_target_id_op
+            label: 'Categoria '
+            description: ''
+            use_operator: false
+            operator: field_categoria_target_id_op
+            identifier: field_categoria_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: categoria_libro
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
       sorts:
         field_autor_value:
           id: field_autor_value
@@ -278,12 +337,18 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -304,7 +369,9 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

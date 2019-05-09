@@ -1,0 +1,21 @@
+uuid: 37e3fbee-71fb-47e7-8f25-1b6b270f152c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.categoria_libro
+  module:
+    - text
+id: taxonomy_term.categoria_libro.default
+targetEntityType: taxonomy_term
+bundle: categoria_libro
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

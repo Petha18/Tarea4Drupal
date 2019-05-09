@@ -1,0 +1,10 @@
+uuid: d05f76e4-366f-4792-a27e-2fa543531f39
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.lista_libros
+label: 'Lista Libros'
+targetEntityType: node
+cache: true

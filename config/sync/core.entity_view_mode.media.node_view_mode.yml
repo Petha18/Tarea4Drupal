@@ -1,0 +1,10 @@
+uuid: c138882d-6150-432b-b11b-b9f93ea15692
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.node_view_mode
+label: 'Node view mode'
+targetEntityType: media
+cache: true

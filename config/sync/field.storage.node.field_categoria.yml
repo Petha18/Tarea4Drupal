@@ -1,12 +1,12 @@
-uuid: 8e7d13c5-5066-4ee8-a814-d49ab1cda28c
+uuid: 8ad4c7d2-2e19-4d18-b919-421c210a1fef
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - text
-id: node.field_title
-field_name: field_title
+id: node.field_categoria
+field_name: field_categoria
 entity_type: node
 type: text
 settings:

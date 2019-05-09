@@ -1,14 +1,14 @@
-uuid: 61b4bfaf-9cd9-40bc-8921-d5afafe1f737
+uuid: 980ec532-1746-4791-baea-87bb6392b7ff
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.library
-id: node.library.title
+    - node.type.libro
+id: node.libro.title
 field_name: title
 entity_type: node
-bundle: library
-label: Library
+bundle: libro
+label: Libro
 description: ''
 required: true
 translatable: true

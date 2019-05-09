@@ -1,0 +1,32 @@
+uuid: 5b8f1f7b-ee6e-4436-be60-864793225a35
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.node_view_mode
+    - field.field.media.image.field_media_image
+    - image.style.portada
+    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: jOwnt_yq6AKAfqU6f0xKnxEkFQ2eTPJWxrk3WMLbL68
+id: media.image.node_view_mode
+targetEntityType: media
+bundle: image
+mode: node_view_mode
+content:
+  field_media_image:
+    label: visually_hidden
+    settings:
+      image_style: portada
+      image_link: file
+    third_party_settings: {  }
+    type: image
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

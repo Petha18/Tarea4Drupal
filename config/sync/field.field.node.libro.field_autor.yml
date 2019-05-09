@@ -1,17 +1,17 @@
-uuid: a71b664a-bc31-45b3-99d6-2fe36eac5332
+uuid: 3b37d503-9b4c-4882-ab78-be2560055d1e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_title
-    - node.type.book
+    - field.storage.node.field_autor
+    - node.type.libro
   module:
     - text
-id: node.book.field_title
-field_name: field_title
+id: node.libro.field_autor
+field_name: field_autor
 entity_type: node
-bundle: book
-label: Title
+bundle: libro
+label: Autor
 description: ''
 required: false
 translatable: false

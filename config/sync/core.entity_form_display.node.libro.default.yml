@@ -1,24 +1,24 @@
-uuid: e60284f0-7d26-4810-9a14-0d5791b03416
+uuid: 3ec95449-0a1c-4b0b-af11-99a455c91bdd
 langcode: en
 status: true
 dependencies:
   config:
     - entity_browser.browser.media_entity_browser
-    - field.field.node.book.field_author
-    - field.field.node.book.field_category
-    - field.field.node.book.field_description
-    - field.field.node.book.field_portada
-    - field.field.node.book.field_title
-    - node.type.book
+    - field.field.node.libro.field_autor
+    - field.field.node.libro.field_categoria
+    - field.field.node.libro.field_description
+    - field.field.node.libro.field_portada
+    - node.type.libro
   module:
     - entity_browser
+    - path
     - text
-id: node.book.default
+id: node.libro.default
 targetEntityType: node
-bundle: book
+bundle: libro
 mode: default
 content:
-  field_author:
+  field_autor:
     weight: 3
     settings:
       size: 60
@@ -26,8 +26,8 @@ content:
     third_party_settings: {  }
     type: text_textfield
     region: content
-  field_category:
-    weight: 2
+  field_categoria:
+    weight: 5
     settings:
       size: 60
       placeholder: ''
@@ -37,14 +37,13 @@ content:
   field_description:
     weight: 4
     settings:
-      rows: 9
-      summary_rows: 3
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea_with_summary
+    type: text_textfield
     region: content
   field_portada:
-    weight: 5
+    weight: 6
     settings:
       entity_browser: media_entity_browser
       field_widget_display: label
@@ -57,14 +56,19 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
-  field_title:
+  path:
+    type: path
     weight: 1
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textfield
     region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 2
+    region: content
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -75,8 +79,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  path: true
   promote: true
-  status: true
   sticky: true
   uid: true

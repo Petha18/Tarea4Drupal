@@ -1,4 +1,4 @@
-uuid: d3e1cd0a-1b5d-4f5e-930b-b2d48c5be73c
+uuid: c838a601-d31c-48b3-a887-1f7ae43142a2
 langcode: en
 status: true
 dependencies:
@@ -8,8 +8,9 @@ dependencies:
 id: node.field_description
 field_name: field_description
 entity_type: node
-type: text_with_summary
-settings: {  }
+type: text
+settings:
+  max_length: 255
 module: text
 locked: false
 cardinality: 1

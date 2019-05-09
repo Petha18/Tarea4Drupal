@@ -1,0 +1,14 @@
+uuid: 5e604eb0-eaed-48fd-acfc-fec0f24a7767
+langcode: en
+status: true
+dependencies: {  }
+name: node_view
+label: 'Node view'
+effects:
+  62782054-e7a6-47ac-80af-c2e73c311b82:
+    uuid: 62782054-e7a6-47ac-80af-c2e73c311b82
+    id: image_resize
+    weight: 1
+    data:
+      width: 500
+      height: 500

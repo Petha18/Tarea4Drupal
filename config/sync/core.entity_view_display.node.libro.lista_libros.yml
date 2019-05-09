@@ -1,0 +1,32 @@
+uuid: 8c69aa7f-ef6a-4711-910a-eefa022ee912
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.lista_libros
+    - field.field.node.libro.field_autor
+    - field.field.node.libro.field_categoria
+    - field.field.node.libro.field_description
+    - field.field.node.libro.field_portada
+    - node.type.libro
+  module:
+    - user
+id: node.libro.lista_libros
+targetEntityType: node
+bundle: libro
+mode: lista_libros
+content:
+  field_portada:
+    type: entity_reference_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: node_view_mode
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_autor: true
+  field_categoria: true
+  field_description: true
+  links: true

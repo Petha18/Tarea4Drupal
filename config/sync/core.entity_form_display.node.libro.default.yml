@@ -41,7 +41,9 @@ content:
     type: text_textfield
     region: content
   field_portada:
+    type: entity_browser_entity_reference
     weight: 6
+    region: content
     settings:
       entity_browser: media_entity_browser
       field_widget_display: label
@@ -52,8 +54,6 @@ content:
       open: false
       field_widget_display_settings: {  }
     third_party_settings: {  }
-    type: entity_browser_entity_reference
-    region: content
   path:
     type: path
     weight: 1

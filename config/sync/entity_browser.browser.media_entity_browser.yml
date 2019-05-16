@@ -1,11 +1,14 @@
-uuid: 895a58af-6323-402e-b00e-d348e025c041
+uuid: 851badc2-c185-42ba-9a1b-94a2b8a72395
 langcode: en
 status: true
 dependencies:
   config:
+    - media.type.image
     - views.view.media_entity_browser
   module:
+    - dropzonejs_eb_widget
     - entity_browser_entity_form
+    - media
     - views
 _core:
   default_config_hash: R9WRMEJZt-oC18igXrWiv_yywFhm_ugH3Oj71M_Zk5U
@@ -42,3 +45,22 @@ widgets:
     weight: -10
     label: 'Upload new image'
     id: entity_form
+  e2c5becc-5efe-4738-b0dd-b929fa3060a9:
+    settings:
+      form_mode: default
+      media_type: image
+      upload_location: 'public://[date:custom:Y]-[date:custom:m]'
+      dropzone_description: 'Drop files here to upload them'
+      max_filesize: 32M
+      extensions: 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp'
+      clientside_resize: false
+      resize_width: null
+      resize_height: null
+      resize_quality: !!float 1
+      resize_method: contain
+      thumbnail_method: contain
+      submit_text: 'Select entities'
+    uuid: e2c5becc-5efe-4738-b0dd-b929fa3060a9
+    weight: 3
+    label: 'Media Entity DropzoneJS with edit'
+    id: dropzonejs_media_entity_inline_entity_form
